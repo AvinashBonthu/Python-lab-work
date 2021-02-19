@@ -1,0 +1,10 @@
+from ex4 import *
+cur.execute("create table if not exists emp1(id number primary key,post varchar(20),dept varchar(20))")
+cur.execute("create table if not exists emp2(id number primary key,vehicle varchar(20),house varchar(20))")
+cur.execute("insert into emp1 values(101,'lecturer','CSE')")
+cur.execute("insert into emp1 values(102,'Sr lecturer','CSE')")
+cur.execute("insert into emp2 values(101,'Swift','ATS-2E65')")
+cur.execute("insert into emp2 values(102,'Swift dezire','ATS-2C25')")
+cur.execute("select ename,post from emp cross join emp1 where emp.id=101")
+con.commit()
+print cur.fetchall()
